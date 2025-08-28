@@ -1,0 +1,76 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "Jack"
+        },
+        {
+            "id": 2,
+            "name": "Kelsey"
+        }
+    ],
+    "masterChores": [
+        {
+            "id": 1661713200000,
+            "name": "Washed a dish",
+            "points": 5,
+            "type": "repeatable"
+        },
+        {
+            "id": 1661713200002,
+            "name": "Wiped down counters",
+            "points": 10,
+            "type": "repeatable"
+        },
+        {
+            "id": 1661713200003,
+            "name": "Took out trash & recycling",
+            "points": 15,
+            "type": "weekly"
+        },
+        {
+            "id": 1661713200004,
+            "name": "Vacuumed living room",
+            "points": 25,
+            "type": "weekly"
+        },
+        {
+            "id": 1661713200005,
+            "name": "Cleaned bathroom",
+            "points": 50,
+            "type": "weekly"
+        },
+        {
+            "id": 1756409536588,
+            "name": "Weekly chore",
+            "points": 234,
+            "type": "weekly"
+        }
+    ],
+    "currentWeek": {
+        "prize": "Winner gets to pick the movie on Friday!",
+        "assignedChores": [
+            {
+                "choreId": 1661713200003,
+                "userId": 1,
+                "completed": false
+            },
+            {
+                "choreId": 1661713200004,
+                "userId": 2,
+                "completed": false
+            },
+            {
+                "choreId": 1661713200005,
+                "userId": 1,
+                "completed": false
+            },
+            {
+                "choreId": 1756409536588,
+                "userId": 2,
+                "completed": false
+            }
+        ],
+        "completedLog": []
+    }
+}

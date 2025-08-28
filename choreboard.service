@@ -1,0 +1,25 @@
+# This file tells the system how to manage the Choreboard server.
+# Save it as 'choreboard.service' in /etc/systemd/system/
+
+[Unit]
+Description=Choreboard Flask Server
+# This ensures the service starts only after the network is ready.
+After=network.target
+
+[Service]
+# The user that will run the script. 'pi' is the default on Raspberry Pi.
+# Change this if you use a different username.
+User=pi
+# The directory where your project is located.
+# IMPORTANT: Change this path to where you actually save your Python file.
+WorkingDirectory=/home/pi/choreboard
+# The command to start the server.
+# We point to the Python executable within the virtual environment.
+# IMPORTANT: If you are NOT using a virtual environment, the command would be:
+# ExecStart=/usr/bin/python3 /home/pi/choreboard/choreboard_server.py
+ExecStart=/home/pi/choreboard/venv/bin/python3 /home/pi/choreboard/choreboard_server.py
+# Automatically restart the service if it crashes.
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

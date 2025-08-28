@@ -1,0 +1,52 @@
+How to Set It Up on Your Raspberry Pi:
+Create a Project Directory:
+
+Open a terminal on your Pi and run these commands:
+
+Bash
+
+mkdir /home/pi/choreboard
+cd /home/pi/choreboard
+Set up a Virtual Environment (Recommended):
+
+This keeps your project's dependencies separate from system-wide packages.
+
+Bash
+
+python3 -m venv venv
+source venv/bin/activate
+pip install Flask Flask-Cors
+Save the Python Code:
+
+Save the Python code from the first document above into a file named choreboard_server.py inside your /home/pi/choreboard directory.
+
+Create the systemd Service File:
+
+Use a text editor to create the service file. nano is easy to use.
+
+Bash
+
+sudo nano /etc/systemd/system/choreboard.service
+Copy the content from the second document above and paste it into the editor.
+
+Crucially, edit the WorkingDirectory and ExecStart paths to match where you saved your project.
+
+Save the file by pressing Ctrl+X, then Y, then Enter.
+
+Enable and Start the Service:
+
+Tell systemd to recognize the new file and enable it to start on boot:
+
+Bash
+
+sudo systemctl daemon-reload
+sudo systemctl enable choreboard.service
+sudo systemctl start choreboard.service
+Check the Status:
+
+You can check if it's running correctly with:
+
+Bash
+
+sudo systemctl status choreboard.service
+You should see a green "active (running)" message. If not, this command will show you any errors.
