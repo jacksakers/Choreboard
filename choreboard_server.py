@@ -62,6 +62,12 @@ def serve_choreboard_app():
     # This securely serves the 'index.html' file from the same directory as the script.
     return send_from_directory(PROJECT_ROOT, 'index.html')
 
+@app.route('/static/<path:filename>')
+def serve_static(filename):
+    """Serves static files (CSS, JS, images, etc.)."""
+    app.logger.info(f"GET /static/{filename} - Serving static file")
+    return send_from_directory(os.path.join(PROJECT_ROOT, 'static'), filename)
+
 
 # --- API Endpoints ---
 
